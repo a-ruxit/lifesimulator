@@ -80,37 +80,59 @@ def agent_movement(vision, face, X, Y):
         y = 99
     return x, y
 
-def next_state(state):
+def next_state(state, agent_list):
     """
     Creates the next state of the board after Agents have moved
     :param state: <lst> Current state of the board
     :returns out_state: <lst> State of the board after movement 
     """
     out_state = np.copy(state)
-    pos_x = 0
-    pos_y = 0
-    for i in range(state_width(state)):
-        for j in range(state_height(state)):
-            if state[i][j] != DEAD and state[i][j] != FOOD and state[i][j] != DIED:
-                agent = out_state[i][j]
-                x, y = agent_movement(agent.vision, agent.face, i, j)
 
-                if out_state[x][y] == DEAD:
-                    out_state[x][y] = agent
-                    out_state[i][j] = DEAD
-                    pos_x = x
-                    pos_y = y
-                    agent.positionX = x
-                    agent.positionY = y
-                    agent.energy -= 2
+    for agent in agent_list:
+        if agent.energy < 0:
+            out_state[agent.positionX][agent.positionY] = DIED
+            agent.live = False
+            continue
 
-                elif out_state[x][y] == FOOD:
-                    out_state[x][y] = agent
-                    out_state[i][j] = DEAD
-                    agent.positionX = x
-                    agent.positionY = y
-                    pos_x = x
-                    pos_y = y
-                    agent.energy += 3
+        if agent.live:
+            if agent.vision == 3:
+                visible_cells = []
+                x, y = agent.positionX, agent.positionY
+
+                if agent.face == 1:
+                    visible_cells = [(x - 1, y - 1), (x, y - 1), (x + 1, y - 1)]
+                elif agent.face == 2:
+                    visible_cells = [(x + 1, y - 1), (x + 1, y), (x + 1, y + 1)]
+                elif agent.face == 3:
+                    visible_cells = [(x - 1, y + 1), (x, y + 1), (x + 1, y + 1)]
+                elif agent.face == 4:
+                    visible_cells = [(x - 1, y - 1), (x - 1, y), (x - 1, y + 1)]
+
+                visible_cells = [(x, y) for x, y in visible_cells if 0 <= x < 100 and 0 <= y < 100 and state[x][y] != DIED]
+
+                if visible_cells:
+                    x, y = random.choice(visible_cells)
+                else:
+                    x, y = random.choice([(agent.positionX + dx, agent.positionY + dy) for dx in range(-1, 2) for dy in range(-1, 2)])
+                    x = min(max(x, 0), 99)
+                    y = min(max(y, 0), 99)
+
+            else:
+                x, y = random.choice([(agent.positionX + dx, agent.positionY + dy) for dx in range(-1, 2) for dy in range(-1, 2)])
+                x = min(max(x, 0), 99)
+                y = min(max(y, 0), 99)
+
+            if out_state[x][y] == DEAD:
+                out_state[x][y] = agent
+                out_state[agent.positionX][agent.positionY] = DEAD
+                agent.positionX, agent.positionY = x, y
+                agent.energy -= 2
+            elif out_state[x][y] == FOOD:
+                out_state[x][y] = agent
+                out_state[agent.positionX][agent.positionY] = DEAD
+                agent.positionX, agent.positionY = x, y
+                agent.energy += 3
+
     return out_state
+
 

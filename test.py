@@ -1,33 +1,36 @@
-# Importing the library
-import pygame
- 
-# Initializing Pygame
-pygame.init()
- 
-# Initializing surface
-surface = pygame.display.set_mode((800,800))
- 
-# Initializing Color
-color = (255,0,0)
-color2 = (0,255,0)
- 
-i, j = 50, 50
-cell_size = 8
- 
-# Drawing Rectangle
-pygame.draw.rect(surface, color, pygame.Rect(i * cell_size, j * cell_size, cell_size, cell_size))
-pygame.draw.circle(surface, color2, (i * cell_size + 6, j * cell_size + 2), 1)
-pygame.draw.circle(surface, color2, (i * cell_size + 6, j * cell_size + 6), 1)
-pygame.display.flip()
+import numpy as np
+import random
+from main import next_state, Alive
 
+def test_next_state():
+    state = np.zeros((100, 100), dtype=object)
+    agent_list = [
+        Alive(x=50, y=50),
+        Alive(x=40, y=60),
+        Alive(x=70, y=70),
+        Alive(x=10, y=30),
+        Alive(x=20, y=20),
+        Alive(x=80, y=80),
+        Alive(x=30, y=70),
+        Alive(x=60, y=40)
+    ]
 
-run = True
-while run:
-    
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
-        
+    # Run the function
+    out_state = next_state(state, agent_list)
 
-# end pygame
-pygame.quit()
+    # Assertions
+    assert out_state.shape == (100, 100)
+    assert isinstance(out_state[50][50], Alive)
+    assert isinstance(out_state[40][60], int)  # Died
+    assert isinstance(out_state[70][70], Alive)
+    assert isinstance(out_state[10][30], int)  # Died
+    assert isinstance(out_state[20][20], Alive)
+    assert isinstance(out_state[80][80], Alive)
+    assert isinstance(out_state[30][70], Alive)
+    assert isinstance(out_state[60][40], Alive)
+    assert out_state[50][50].positionX != 50 or out_state[50][50].positionY != 50  # Agent has moved
+
+    print("All test cases passed.")
+
+# Run the test cases
+test_next_state()

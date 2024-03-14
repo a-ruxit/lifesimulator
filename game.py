@@ -25,7 +25,7 @@ def next_state(board, agent_list):
         if j.energy < 0:
             board[j.positionX][j.positionY] = DIED
             j.live = False
-    board = main.next_state(board)
+    board = main.next_state(board, agent_list)
     return board, agent_list
 
 def render_board(board, grid_size, cell_size):
