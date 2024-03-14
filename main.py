@@ -57,7 +57,7 @@ def state_height(state):
     """
     return len(state[0])
 
-def agent_movement(vision, X, Y):
+def agent_movement(vision, face, X, Y):
     """
     Creates new coordinates for the Agent's Position
     :param X, Y: <int> Coordinate's of the current position of the Agent
@@ -65,10 +65,11 @@ def agent_movement(vision, X, Y):
     """
 
     if vision == 3:
-        pass
+        if face == 1:
+            pass
 
 
-    x, y = random.choice([X-2, X-1, X, X+1, X+2]), random.choice([Y-2, Y-1, Y, Y+1, Y+2])
+    x, y = random.choice([X-1, X, X+1]), random.choice([Y-1, Y, Y+1])
     if x < 0:
         x = 0
     elif x > 99:
@@ -92,7 +93,7 @@ def next_state(state):
         for j in range(state_height(state)):
             if state[i][j] != DEAD and state[i][j] != FOOD and state[i][j] != DIED:
                 agent = out_state[i][j]
-                x, y = agent_movement(agent.vision, i, j)
+                x, y = agent_movement(agent.vision, agent.face, i, j)
 
                 if out_state[x][y] == DEAD:
                     out_state[x][y] = agent
