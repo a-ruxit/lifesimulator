@@ -7,7 +7,8 @@ class Alive:
     def __init__(self, x, y):
         self.live = True
         self.energy = 10
-        self.foodCount = 0
+        self.face = random.choice([1, 2, 3, 4])
+        self.vision = random.choices([0, 3, 5], weights=[10, 1, 0.1], k=1)[0]
         self.positionX = x
         self.positionY = y
 
@@ -56,12 +57,17 @@ def state_height(state):
     """
     return len(state[0])
 
-def agent_movement(X, Y):
+def agent_movement(vision, X, Y):
     """
     Creates new coordinates for the Agent's Position
     :param X, Y: <int> Coordinate's of the current position of the Agent
     :returns x, y: <int> Coordinate's of new position of the Agent
     """
+
+    if vision == 3:
+        pass
+
+
     x, y = random.choice([X-2, X-1, X, X+1, X+2]), random.choice([Y-2, Y-1, Y, Y+1, Y+2])
     if x < 0:
         x = 0
@@ -86,7 +92,7 @@ def next_state(state):
         for j in range(state_height(state)):
             if state[i][j] != DEAD and state[i][j] != FOOD and state[i][j] != DIED:
                 agent = out_state[i][j]
-                x, y = agent_movement(i, j)
+                x, y = agent_movement(agent.vision, i, j)
 
                 if out_state[x][y] == DEAD:
                     out_state[x][y] = agent
@@ -104,7 +110,6 @@ def next_state(state):
                     agent.positionY = y
                     pos_x = x
                     pos_y = y
-                    agent.foodCount += 1
                     agent.energy += 3
     return out_state
 
