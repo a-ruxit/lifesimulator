@@ -89,19 +89,7 @@ def next_state(state, agent_list):
                 elif agent.face == 4:
                     visible_cells = [(x - 1, y - 1), (x - 1, y), (x - 1, y + 1)]
             
-            if agent.vision == 5:
-                x, y = agent.positionX, agent.positionY
-
-                if agent.face == 1:
-                    visible_cells = [(x - 1, y - 1), (x, y - 1), (x + 1, y - 1), (x-1, y), (x+1, y)]
-                elif agent.face == 2:
-                    visible_cells = [(x + 1, y - 1), (x + 1, y), (x + 1, y + 1), (x, y-1), (x, y+1)]
-                elif agent.face == 3:
-                    visible_cells = [(x - 1, y + 1), (x, y + 1), (x + 1, y + 1), (x-1, y), (x+1, y)]
-                elif agent.face == 4:
-                    visible_cells = [(x - 1, y - 1), (x - 1, y), (x - 1, y + 1), (x, y-1), (x, y+1)]
-
-
+        
                 try:
                     agent_visible_cells = [(x, y) for x, y in visible_cells if 0 <= x < 100 and 0 <= y < 100 and state[x][y] != DIED and state[x][y] == FOOD]
                 except:
