@@ -11,6 +11,15 @@ class Alive:
         self.vision = random.choices([0, 3, 5], weights=[10, 1, 0.1], k=1)[0]
         self.positionX = x
         self.positionY = y
+        self.eyeColor = self.setEyeColor()
+
+    def setEyeColor(vision):
+        if vision == 3:
+            return (255, 255, 255)
+        elif vision == 5:
+            return (255, 255, 255)
+        else:
+            return (0, 0, 0)
 
 DEAD = 0
 FOOD = 1
@@ -57,35 +66,8 @@ def state_height(state):
     """
     return len(state[0])
 
-def agent_movement(vision, face, X, Y):
-    """
-    Creates new coordinates for the Agent's Position
-    :param X, Y: <int> Coordinate's of the current position of the Agent
-    :returns x, y: <int> Coordinate's of new position of the Agent
-    """
-
-    if vision == 3:
-        if face == 1:
-            pass
-
-
-    x, y = random.choice([X-1, X, X+1]), random.choice([Y-1, Y, Y+1])
-    if x < 0:
-        x = 0
-    elif x > 99:
-        x = 99
-    if y < 0:
-        y = 0
-    elif y > 99:
-        y = 99
-    return x, y
 
 def next_state(state, agent_list):
-    """
-    Creates the next state of the board after Agents have moved
-    :param state: <lst> Current state of the board
-    :returns out_state: <lst> State of the board after movement 
-    """
     out_state = np.copy(state)
 
     for agent in agent_list:
@@ -96,7 +78,6 @@ def next_state(state, agent_list):
 
         if agent.live:
             if agent.vision == 3:
-                visible_cells = []
                 x, y = agent.positionX, agent.positionY
 
                 if agent.face == 1:
@@ -107,15 +88,37 @@ def next_state(state, agent_list):
                     visible_cells = [(x - 1, y + 1), (x, y + 1), (x + 1, y + 1)]
                 elif agent.face == 4:
                     visible_cells = [(x - 1, y - 1), (x - 1, y), (x - 1, y + 1)]
+            
+            if agent.vision == 5:
+                x, y = agent.positionX, agent.positionY
 
-                visible_cells = [(x, y) for x, y in visible_cells if 0 <= x < 100 and 0 <= y < 100 and state[x][y] != DIED]
+                if agent.face == 1:
+                    visible_cells = [(x - 1, y - 1), (x, y - 1), (x + 1, y - 1), (x-1, y), (x+1, y)]
+                elif agent.face == 2:
+                    visible_cells = [(x + 1, y - 1), (x + 1, y), (x + 1, y + 1), (x, y-1), (x, y+1)]
+                elif agent.face == 3:
+                    visible_cells = [(x - 1, y + 1), (x, y + 1), (x + 1, y + 1), (x-1, y), (x+1, y)]
+                elif agent.face == 4:
+                    visible_cells = [(x - 1, y - 1), (x - 1, y), (x - 1, y + 1), (x, y-1), (x, y+1)]
 
-                if visible_cells:
-                    x, y = random.choice(visible_cells)
+
+                try:
+                    agent_visible_cells = [(x, y) for x, y in visible_cells if 0 <= x < 100 and 0 <= y < 100 and state[x][y] != DIED and state[x][y] == FOOD]
+                except:
+                    print(agent.positionX, agent.positionY, agent.face, agent.vision, agent.energy)
+
+                if agent_visible_cells:
+                    x, y = random.choice(agent_visible_cells)
                 else:
-                    x, y = random.choice([(agent.positionX + dx, agent.positionY + dy) for dx in range(-1, 2) for dy in range(-1, 2)])
-                    x = min(max(x, 0), 99)
-                    y = min(max(y, 0), 99)
+                    if ((agent.positionX == 0 and agent.face == 4) or
+                        (agent.positionX == 99 and agent.face == 2) or
+                        (agent.positionY == 0 and agent.face == 1) or
+                        (agent.positionY == 99 and agent.face == 3)):
+                        agent.face = (agent.face+2) % 4 if agent.face != 2 else 4
+                    else:
+                        x, y = random.choice([(agent.positionX + dx, agent.positionY + dy) for dx in range(-1, 2) for dy in range(-1, 2)])
+                        x = min(max(x, 0), 99)
+                        y = min(max(y, 0), 99)
 
             else:
                 x, y = random.choice([(agent.positionX + dx, agent.positionY + dy) for dx in range(-1, 2) for dy in range(-1, 2)])

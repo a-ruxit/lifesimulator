@@ -1,6 +1,7 @@
 import pygame
 import main
 import time
+import json
 
 
 # Environment Variables
@@ -40,22 +41,32 @@ def render_board(board, grid_size, cell_size):
                 pygame.draw.rect(screen, colors[3], (i * cell_size, j * cell_size, cell_size, cell_size))
             else:
                 pygame.draw.rect(screen, colors[1], (i * cell_size, j * cell_size, cell_size, cell_size))
-
+                eye_color = (0, 0, 0)
+                if board[i][j].vision == 3:
+                    eye_color = (255, 255, 255)
+                if board[i][j].vision == 5:
+                    eye_color = (255, 223, 0)
                 if board[i][j].face == 1:
-                    pygame.draw.circle(screen, colors[3], (i * cell_size + 2, j * cell_size + 2), 1)
-                    pygame.draw.circle(screen, colors[3], (i * cell_size + 6, j * cell_size + 2), 1)
+                    pygame.draw.circle(screen, eye_color, (i * cell_size + 2, j * cell_size + 2), 1)
+                    pygame.draw.circle(screen, eye_color, (i * cell_size + 6, j * cell_size + 2), 1)
                 elif board[i][j].face == 2:
-                    pygame.draw.circle(screen, colors[3], (i * cell_size + 6, j * cell_size + 2), 1)
-                    pygame.draw.circle(screen, colors[3], (i * cell_size + 6, j * cell_size + 6), 1)
+                    pygame.draw.circle(screen, eye_color, (i * cell_size + 6, j * cell_size + 2), 1)
+                    pygame.draw.circle(screen, eye_color, (i * cell_size + 6, j * cell_size + 6), 1)
                 elif board[i][j].face == 3:
-                    pygame.draw.circle(screen, colors[3], (i * cell_size + 2, j * cell_size + 6), 1)
-                    pygame.draw.circle(screen, colors[3], (i * cell_size + 6, j * cell_size + 6), 1)
+                    pygame.draw.circle(screen, eye_color, (i * cell_size + 2, j * cell_size + 6), 1)
+                    pygame.draw.circle(screen, eye_color, (i * cell_size + 6, j * cell_size + 6), 1)
                 elif board[i][j].face == 4:
-                    pygame.draw.circle(screen, colors[3], (i * cell_size + 2, j * cell_size + 2), 1)
-                    pygame.draw.circle(screen, colors[3], (i * cell_size + 2, j * cell_size + 6), 1)
-                
+                    pygame.draw.circle(screen, eye_color, (i * cell_size + 2, j * cell_size + 2), 1)
+                    pygame.draw.circle(screen, eye_color, (i * cell_size + 2, j * cell_size + 6), 1)
+            
     pygame.display.update()
 
+def edit_json(agent_list):
+    agent_dict = {}
+    for agent in agent_list:
+        agent_dict[f'{agent}'] = {'Live':agent.live, 'Energy':agent.energy, 'Vision':agent.vision}
+    with open('agents.json', 'w') as file:
+        json.dump(agent_dict, file, indent=4)
 
 
 
@@ -72,6 +83,7 @@ while run:
     for i in range(100):
         board, agent_list = next_state(board, agent_list)
         render_board(board, grid_size, cell_size)
+    edit_json(agent_list)
     run = False
 
     for event in pygame.event.get():

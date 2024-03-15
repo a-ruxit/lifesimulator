@@ -1,0 +1,502 @@
+{
+    "<main.Alive object at 0x1152b8b50>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8850>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8940>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8a90>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8490>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8c40>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8c10>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8ca0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8cd0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8d00>": {
+        "Live": true,
+        "Energy": 189,
+        "Vision": 3
+    },
+    "<main.Alive object at 0x1152b8d30>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8d60>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8d90>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8dc0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8df0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8e20>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8e50>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8e80>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8eb0>": {
+        "Live": true,
+        "Energy": 140,
+        "Vision": 3
+    },
+    "<main.Alive object at 0x1152b8ee0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8f10>": {
+        "Live": true,
+        "Energy": 124,
+        "Vision": 3
+    },
+    "<main.Alive object at 0x1152b8f40>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8f70>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8fa0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8fd0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9000>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9030>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9060>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9090>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b90c0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b90f0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9120>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9150>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9180>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b91b0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b91e0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9210>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9240>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9270>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b92a0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b92d0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9300>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9330>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b9360>": {
+        "Live": true,
+        "Energy": -2,
+        "Vision": 3
+    },
+    "<main.Alive object at 0x1152b9390>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b93c0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbfd0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbdc0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 3
+    },
+    "<main.Alive object at 0x1152bbd30>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbd00>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbcd0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbca0>": {
+        "Live": true,
+        "Energy": 148,
+        "Vision": 3
+    },
+    "<main.Alive object at 0x1152bbc70>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbc40>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbc10>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbbe0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbbb0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbb80>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbb50>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbb20>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbaf0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbac0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bba90>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bba60>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bba30>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bba00>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb9d0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb9a0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb970>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb940>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb910>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb8e0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb8b0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb880>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8070>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bbf40>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8b80>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b8460>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152b83d0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb850>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb820>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb7f0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb7c0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb790>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb760>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb730>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb700>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb6d0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb6a0>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb670>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb640>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb610>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb5e0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb5b0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb580>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb550>": {
+        "Live": false,
+        "Energy": -2,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb520>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb4f0>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    },
+    "<main.Alive object at 0x1152bb4c0>": {
+        "Live": true,
+        "Energy": 104,
+        "Vision": 3
+    },
+    "<main.Alive object at 0x1152bb490>": {
+        "Live": false,
+        "Energy": -1,
+        "Vision": 0
+    }
+}
